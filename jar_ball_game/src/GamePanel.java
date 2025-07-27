@@ -36,10 +36,10 @@ class GamePanel extends JPanel implements ActionListener, MouseListener, MouseMo
     // Ball generation
     private Random random;
     private final int MAX_INITIAL_BALL_LEVEL = 3; // Max level for randomly generated balls
-    private final int MAX_BALL_LEVEL_FOR_IMAGES = 7;
+    private final int MAX_BALL_LEVEL_FOR_IMAGES = 6;
 
     //Max ball level
-    private final int MAX_MERGE_LEVEL = 7;
+    private final int MAX_MERGE_LEVEL = 6;
     
     //Delay for game over so you don't instantly lose
     private final long OUT_OF_BOUNDS_DELAY_MS= 4000;

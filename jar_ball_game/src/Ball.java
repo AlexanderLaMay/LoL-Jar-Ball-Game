@@ -17,6 +17,9 @@ class Ball {
     
     //Mass of the ball
     double mass;
+    
+    // Factor to make the image drawn larger than the ball's diameter.
+    private static final double IMAGE_DISPLAY_SCALE_FACTOR = 1.2;
 
     // Constructor for a new ball
     public Ball(int x, int y, int level, BufferedImage image) {
@@ -70,7 +73,12 @@ class Ball {
     public void draw(Graphics g) {
     	//Draw the image scaled to the ball's radius
         if (image != null) {
-        	g.drawImage(image, x - (int) radius, y - (int) radius, (int)(radius * 2), (int) (radius * 2), null);
+        	int imageDrawDiameter = (int) (radius * 2 * IMAGE_DISPLAY_SCALE_FACTOR);
+        	
+        	int imageDrawX = x - (imageDrawDiameter / 2);
+        	int imageDrawY = y - (imageDrawDiameter / 2);
+        	
+        	g.drawImage(image, imageDrawX, imageDrawY, imageDrawDiameter, imageDrawDiameter, null);
         } else {
         	// Fallback: if image not loaded, draw a colored circle (optional)
             g.setColor(Color.GRAY);
